@@ -1,0 +1,16 @@
+defaultVaultConnection:
+  enabled: true
+  address: https://vault.ricardorompar.com:8200
+
+defaultAuthMethod:
+  enabled: true
+  namespace: hashicardo-k8s-ns
+  allowedNamespaces:
+    - simple-app
+  method: kubernetes
+  mount: kubernetes
+  kubernetes:
+    role: simple-app
+    serviceAccount: vault-auth
+    tokenAudiences:
+      - vault
