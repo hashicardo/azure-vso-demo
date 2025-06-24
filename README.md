@@ -5,17 +5,22 @@ This repo contains some resources to recreate a demo similar to the VSO demo in 
 The resources defined in [aks-vault](./aks-vault/) were taken from the [HashiCorp Education repo](https://github.com/hashicorp-education/learn-terraform-provision-aks-cluster) to deploy an AKS cluster using Terraform.
 
 # Prerequisites
-- **Vault**: You'll need a publicly accessible Vault cluster. If you need an enterprise cluster check out [this repo]() which helps you deploy a simpler version of Vault Enterprise without all the extra requirements for deploying the HVD module.
+- **Vault**: You'll need a publicly accessible Vault cluster. If you need an enterprise cluster check out [this repo](https://github.com/hashicardo/vault-enterprise-demo) which helps you deploy a simpler version of Vault Enterprise without all the extra requirements for deploying the HVD module.
+- **`vault`**: the Vault CLI
+- **`az`**: the Azure CLI installed locally
+- **`kubectl`**: the K8s CLI.
+- **`terraform`**: to deploy all resources outside of K8s.
+- **`helm`**
 
 ## 1. Deploy AKS cluster
-Copy the repo from HashiCorp learn:
+Copy this repo:
 ```bash
-git clone https://github.com/hashicorp-education/learn-terraform-provision-aks-cluster aks-vault
+git clone https://github.com/hashicardo/azure-vso-demo.git vso-demo
 ```
 
 Deploy the AKS cluster. This will also create a resource group in which your AKS cluster will be.
 ```bash
-cd aks-vault
+cd vso-demo/aks-vault
 terraform init
 terraform apply
 # Review the plan and confirm
